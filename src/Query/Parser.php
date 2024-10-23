@@ -3237,6 +3237,11 @@ final class Parser
     {
         assert($this->lexer->lookahead !== null);
         switch ($this->lexer->lookahead->value) {
+            case '%':
+                $this->match(TokenType::T_NONE);
+
+                return '%';
+            
             case '=':
                 $this->match(TokenType::T_EQUALS);
 
